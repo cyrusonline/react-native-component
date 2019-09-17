@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button,Alert } from "react-native";
 
 import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
@@ -19,7 +19,7 @@ const GameScreen = props => {
   );
 
   const nextGuessHandler = direction => {
-
+   Alert.alert(direction)
   }
   return (
     <View style={styles.screen}>
@@ -27,7 +27,7 @@ const GameScreen = props => {
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card style={styles.buttonContainer}>
         <Button title="LOWER" onPress={nextGuessHandler.bind(this,'lower')} />
-        <Button title="GREATER" onPress={() => {}} />
+        <Button title="GREATER" onPress={nextGuessHandler.bind(this,'greater')} />
       </Card>
     </View>
   );
