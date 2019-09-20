@@ -37,15 +37,15 @@ export default function App() {
   const gameOverHandler = numOfRounds => {
     setGuessRounds(numOfRounds);
   };
-
-  let content = <StartGameScreen onStartGame={startGameHandler} />;
-  if (userNumber && guessRounds <= 0) {
-    content = (
-      <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />
-    );
-  } else if (guessRounds > 0) {
-    content = <GameOverScreen />;
-  }
+let content = <GameOverScreen />;
+  // let content = <StartGameScreen onStartGame={startGameHandler} />;
+  // if (userNumber && guessRounds <= 0) {
+  //   content = (
+  //     <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} />
+  //   );
+  // } else if (guessRounds > 0) {
+  //   content = <GameOverScreen />;
+  // }
   return (
     <View style={styles.screen}>
       <Header title="Guess a numbers" />
